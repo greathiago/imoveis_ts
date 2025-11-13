@@ -9,7 +9,7 @@ export default function Navbar() {
         <Link href="/">
           <div className="relative h-12 w-48">
             <Image
-              src="/logo-taise-silva.png"
+              src="/logo-taise-silva2.png"
               alt="Taise Silva Imóveis"
               fill
               className="object-contain"
@@ -20,7 +20,6 @@ export default function Navbar() {
           <Link href="/" className="hover:text-brand-gold transition-colors">Início</Link>
           <Link href="/quem-somos" className="hover:text-brand-gold transition-colors">Quem Somos</Link>
           <Link href="/imoveis" className="hover:text-brand-gold transition-colors">Comprar</Link>
-          {/* Botão com as cores da marca */}
           <a href="#contato" className="bg-brand-green text-white px-5 py-2 rounded-lg hover:bg-opacity-90 transition-all">
             Contato
           </a>

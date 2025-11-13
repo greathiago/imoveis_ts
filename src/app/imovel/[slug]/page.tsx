@@ -17,6 +17,7 @@ interface PropertyDetails {
   bedrooms: number;
   bathrooms: number;
   area: number;
+  builtArea: number;
   propertyType: string;
   status: 'venda' | 'aluguel';
   mainImage: SanityImageSource;
@@ -32,6 +33,7 @@ async function getProperty(slug: string) {
     bedrooms,
     bathrooms,
     area,
+    builtArea,
     propertyType,
     status,
     mainImage,
@@ -42,7 +44,7 @@ async function getProperty(slug: string) {
   return property;
 }
 
-export default async function PropertyDetailsPage(props: PageProps<'/imovel/[slug]'>) {
+export default async function PropertyDetailsPage(props: PageProps<"/imovel/[slug]">) {
   const { slug } = await props.params;
   const property = await getProperty(slug);
 
@@ -60,6 +62,10 @@ export default async function PropertyDetailsPage(props: PageProps<'/imovel/[slu
     { icon: <Bath size={20} />, label: "Banheiro(s)", value: property.bathrooms },
     { icon: <Square size={20} />, label: "Área (m²)", value: property.area },
   ];
+
+  if (property.propertyType !== 'Apartamento' && property.builtArea) {
+    features.push({ icon: <Square size={20} />, label: "Área Construída (m²)", value: property.builtArea });
+  }
 
   return (
     <div className="bg-white">

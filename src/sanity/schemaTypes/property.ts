@@ -85,8 +85,20 @@ export const property = defineType({
             validation: (Rule) => Rule.required(),
         }),
         defineField({
+            name: 'city',
+            title: 'Cidade',
+            type: 'string',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'neighborhood',
+            title: 'Bairro',
+            type: 'string',
+            // validation: (Rule) => Rule.required(),
+        }),
+        defineField({
             name: 'address',
-            title: 'Endereço (Bairro, Cidade)',
+            title: 'Endereço (Rua)',
             type: 'string',
             validation: (Rule) => Rule.required(),
         }),
@@ -103,6 +115,11 @@ export const property = defineType({
         defineField({
             name: 'area',
             title: 'Área (m²)',
+            type: 'number',
+        }),
+        defineField({
+            name: 'builtArea',
+            title: 'Área Construída (m²)',
             type: 'number',
         }),
         defineField({
