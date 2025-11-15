@@ -67,6 +67,8 @@ export default async function PropertyDetailsPage(props: PageProps<"/imovel/[slu
     features.push({ icon: <Square size={20} />, label: "Área Construída (m²)", value: property.builtArea });
   }
 
+  const whatsAppNumber = '553488993674';
+
   return (
     <div className="bg-white">
       <div className="container mx-auto px-4 py-12">
@@ -128,7 +130,7 @@ export default async function PropertyDetailsPage(props: PageProps<"/imovel/[slu
               </ul>
 
               <a 
-                href={`https://wa.me/55SEUNUMERODOWHATSAPP?text=Olá,%20tenho%20interesse%20no%20imóvel:%20${encodeURIComponent(property.title)}`}
+                href={`https://wa.me/${whatsAppNumber}?text=Olá,%20tenho%20interesse%20no%20imóvel:%20${encodeURIComponent(property.title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 w-full block text-center bg-brand-green text-white font-bold py-3 rounded-lg hover:bg-opacity-90 transition-opacity"
